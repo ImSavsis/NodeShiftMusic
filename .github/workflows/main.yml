@@ -40,13 +40,16 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_ALLOWED=NO \
-            ENABLE_BITCODE=NO \
-            | xcpretty || true
+            ENABLE_BITCODE=NO
+
+      - name: Find app bundle
+        run: find "$RUNNER_TEMP/burmalda.xcarchive" -name "*.app" -type d
 
       - name: Package IPA
         run: |
+          APP_PATH=$(find "$RUNNER_TEMP/burmalda.xcarchive" -name "*.app" -type d | head -1)
           mkdir -p Payload
-          cp -r "$RUNNER_TEMP/burmalda.xcarchive/Products/Applications/"*.app Payload/
+          cp -r "$APP_PATH" Payload/
           zip -qr burmalda-unsigned.ipa Payload
           rm -rf Payload
 
