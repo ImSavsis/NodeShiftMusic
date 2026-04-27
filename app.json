@@ -11,19 +11,32 @@
       "resizeMode": "contain",
       "backgroundColor": "#0a0a0a"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "space.nodeshift.burmalda",
       "buildNumber": "1",
       "infoPlist": {
-        "UIBackgroundModes": ["audio"],
+        "UIBackgroundModes": [
+          "audio",
+          "audio"
+        ],
         "NSMicrophoneUsageDescription": "Не используется",
         "CFBundleURLTypes": [
           {
-            "CFBundleURLSchemes": ["burmalda"]
+            "CFBundleURLSchemes": [
+              "burmalda"
+            ]
+          },
+          {
+            "CFBundleURLSchemes": [
+              "burmalda"
+            ]
           }
-        ]
+        ],
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "scheme": "burmalda",
@@ -34,8 +47,7 @@
         {
           "username": "nodeshift"
         }
-      ],
-      "react-native-track-player"
+      ]
     ],
     "updates": {
       "enabled": true,
@@ -49,11 +61,15 @@
       "apiBase": "https://music.nodeshift.space",
       "cloudClientId": "nsc_A5zi4cZ103aYJGcNTG1bERXV1YCAQW_U",
       "eas": {
-        "projectId": "burmalda-music-nodeshift"
+        "projectId": "a106cb67-7dc6-44d5-bfba-98946e26c9e9"
+      },
+      "router": {
+        "origin": false
       }
     },
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "owner": "savcis"
   }
 }

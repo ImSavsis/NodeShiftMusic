@@ -93,3 +93,4 @@ store/
 constants/
   theme.ts          — Цвета, шрифты, отступы
 ```
+"# NodeShiftMusic" 

@@ -7,8 +7,7 @@ import Animated, {
 import { PanGestureHandler } from 'react-native-gesture-handler';
 import { BlurView } from 'expo-blur';
 import { Image } from 'expo-image';
-import Svg, { Path, Rect } from 'react-native-svg';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Svg, { Path } from 'react-native-svg';
 import * as Haptics from 'expo-haptics';
 import { Colors, Font, Radius, Spacing, TAB_BAR_HEIGHT, MINI_PLAYER_HEIGHT } from '../constants/theme';
 import { usePlayer } from '../store';

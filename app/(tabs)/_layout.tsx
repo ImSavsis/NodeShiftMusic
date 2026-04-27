@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Tabs, router } from 'expo-router';
 import { BlurView } from 'expo-blur';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Svg, { Path, Circle, Rect, Line, Polyline } from 'react-native-svg';
+import Svg, { Path, Circle, Line, Polyline } from 'react-native-svg';
 import { Colors, TAB_BAR_HEIGHT } from '../../constants/theme';
 import { useAuth, usePlayer } from '../../store';
 import MiniPlayer from '../../components/MiniPlayer';
@@ -11,8 +10,7 @@ import Player from '../../components/Player';
 
 export default function TabsLayout() {
   const { user, ready } = useAuth();
-  const { expanded } = usePlayer();
-  const insets = useSafeAreaInsets();
+  const { expanded }    = usePlayer();
 
   useEffect(() => {
     if (ready && !user) {
@@ -34,25 +32,13 @@ export default function TabsLayout() {
           tabBarActiveTintColor:   Colors.green,
           tabBarInactiveTintColor: Colors.text3,
           tabBarLabelStyle: { fontSize: 10, fontWeight: '600', marginBottom: 4 },
-          tabBarItemStyle: { paddingTop: 8 },
+          tabBarItemStyle:  { paddingTop: 8 },
         }}
       >
-        <Tabs.Screen
-          name="index"
-          options={{ title: 'Главная', tabBarIcon: ({ color }) => <HomeIcon color={color} /> }}
-        />
-        <Tabs.Screen
-          name="library"
-          options={{ title: 'Библиотека', tabBarIcon: ({ color }) => <LibIcon color={color} /> }}
-        />
-        <Tabs.Screen
-          name="search"
-          options={{ title: 'Поиск', tabBarIcon: ({ color }) => <SearchIcon color={color} /> }}
-        />
-        <Tabs.Screen
-          name="profile"
-          options={{ title: 'Профиль', tabBarIcon: ({ color }) => <ProfileIcon color={color} /> }}
-        />
+        <Tabs.Screen name="index"   options={{ title: 'Главная',    tabBarIcon: ({ color }) => <HomeIcon color={color} /> }} />
+        <Tabs.Screen name="library" options={{ title: 'Библиотека', tabBarIcon: ({ color }) => <LibIcon color={color} /> }} />
+        <Tabs.Screen name="search"  options={{ title: 'Поиск',      tabBarIcon: ({ color }) => <SearchIcon color={color} /> }} />
+        <Tabs.Screen name="profile" options={{ title: 'Профиль',    tabBarIcon: ({ color }) => <ProfileIcon color={color} /> }} />
       </Tabs>
 
       <MiniPlayer />
@@ -65,7 +51,7 @@ function HomeIcon({ color }: { color: string }) {
   return (
     <Svg width={22} height={22} viewBox="0 0 24 24" fill="none">
       <Path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke={color} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" />
-      <Polyline points="9 22 9 12 15 12 15 22" stroke={color} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" />
+      <Polyline points="9,22 9,12 15,12 15,22" stroke={color} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" />
     </Svg>
   );
 }

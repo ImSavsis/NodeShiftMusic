@@ -145,8 +145,6 @@ function fmt(s: number) {
   return `${m}:${sec < 10 ? '0' : ''}${sec}`;
 }
 
-import { useEffect } from 'react';
-
 const styles = StyleSheet.create({
   container:   { flex: 1, backgroundColor: Colors.bg },
   header:      { paddingHorizontal: Spacing.md, paddingTop: Spacing.md, paddingBottom: Spacing.sm, flexDirection: 'row', alignItems: 'baseline', gap: Spacing.sm },

@@ -2,13 +2,12 @@ import { useState, useCallback } from 'react';
 import {
   View, Text, TextInput, FlatList, StyleSheet, Pressable, Keyboard,
 } from 'react-native';
-import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
+import Animated, { FadeIn, FadeInDown, useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Image } from 'expo-image';
 import { Colors, Font, Spacing, Radius, TAB_BAR_HEIGHT, MINI_PLAYER_HEIGHT } from '../../constants/theme';
 import { searchTracks, Track, coverUrl } from '../../services/api';
 import { usePlayer } from '../../store';
-import { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 
 export default function SearchScreen() {
   const [query, setQuery]     = useState('');
